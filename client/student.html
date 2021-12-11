@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<!--
+    Code references:
+    https://www.w3schools.com/w3css/tryw3css_templates_start_page.htm
+    https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_start_page&stacked=h
+-->
+
+<html lang="en">
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href=".\index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href=".\create_account.html" class="w3-bar-item w3-button w3-padding-large w3-white">Create Account</a>
+    <a href=".\student.html" class="w3-bar-item w3-button w3-padding-large w3-white">Student Profile</a>
+    <a href=".\login.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a>
+    <button id="logout" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Logout</button>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-green w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo" id="studentProfileHeader">Profile</h1>
+</header>
+
+<header class="w3-container w3-white w3-center" style="padding:8px 16px">
+    <h2 class="w3-margin w3-jumbo">Course History</h2>
+    <h5 class="w3-margin">Please input all courses taken in this program.</h5>
+</header>
+
+<div class="w3-container w3-white w3-center" style="width:30%; margin-left:35%">
+  <p></p><input class="w3-input w3-border" type="text" placeholder="Subject" id="subject" required></p> 
+  <p></p><input class="w3-input w3-border" type="text" placeholder="Course Number" id="courseNum" required></p> 
+  <p></p><input class="w3-input w3-border" type="text" placeholder="Final Grade" id="grade" required></p> 
+  <p><button class="w3-button w3-block w3-green w3-center-align" type="submit" id="submitCourseHistory">Submit</button></p> 
+</div>
+
+<p class="w3-button w3-block w3-white w3-center-align">Current course history:</p>
+<p class="w3-button w3-block w3-white w3-center-align" id="courseHistoryResults" ></p>
+
+
+<header class="w3-container w3-white w3-center" style="padding:8px 16px">
+    <h2 class="w3-margin w3-jumbo">Availability</h2>
+    <h5 class="w3-margin">Please check all days and times available.</h5>
+</header>
+
+<form class="w3-container w3-white w3-center" style="width:30%; margin-left:35%"> 
+    <p>Select the times you're available:</p>
+	<p><table>
+			<tr>
+				<th></th>
+				<th width="25%">Monday</th> 
+				<th width="25%">Tuesday</th>
+				<th width="25%">Wednesday</th>
+				<th width="25%">Thursday</th> 
+				<th width="25%">Friday</th>
+			</tr>
+			<tr>
+			<td id="time"><b>Mornings:</b><br/>8:00 AM-12:00 PM</td>
+				<td><input type="checkbox" id="monmorn"></td> 
+                <td><input type="checkbox" id="tuesmorn"></td> 
+                <td><input type="checkbox" id="wedsmorn"></td> 
+                <td><input type="checkbox" id="thursmorn"></td> 
+                <td><input type="checkbox" id="frimorn"></td> 
+			</tr>
+			<tr>
+			<td id="time"><b>Afternoons:</b><br/>12:00 PM-5:00 PM</td>
+                <td><input type="checkbox" id="monafter"></td> 
+                <td><input type="checkbox" id="tuesafter"></td> 
+                <td><input type="checkbox" id="wedsafter"></td> 
+                <td><input type="checkbox" id="thursafter"></td> 
+                <td><input type="checkbox" id="friafter"></td> 
+			</tr>
+			<tr>
+			<td id="time"><b>Evenings:</b><br/>5:00 PM-11:00 PM</td>
+                <td><input type="checkbox" id="moneven"></td> 
+                <td><input type="checkbox" id="tueseven"></td> 
+                <td><input type="checkbox" id="wedseven"></td> 
+                <td><input type="checkbox" id="thurseven"></td> 
+                <td><input type="checkbox" id="frieven"></td> 
+			</tr>
+	</table></p> 
+</form>
+
+<div class="w3-container w3-white w3-center" style="width:30%; margin-left:35%">
+  <p><button class="w3-button w3-block w3-green w3-center-align" type="submit" id="submitAvailability">Submit Availability</button></p> 
+  <br>
+</div>
+
+<div class="w3-container w3-white w3-center" style="width:30%; margin-left:35%">
+  <select id="semesterList">
+    <option value="select">--- Please Select Semester ---</option>
+  </select> 
+  <br>
+  <br>
+  <br>
+  <select id="numOfCourses">
+    <option value="select">--- Please Select Number of Courses ---</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select> 
+  <br>
+  <br>
+</div>
+
+
+<div class="w3-container w3-white w3-center" style="width:30%; margin-left:35%">
+  <p><button class="w3-button w3-block w3-green w3-center-align" type="submit" id="generateSchedule">Generate Schedule</button></p> 
+  <br>
+</div>
+
+<table id="scheduleResults" class="w3-container w3-white w3-center" style="padding-left: 20%;">
+  <tr>
+    <th style="width: 100px; border: 1px solid black;">CRN</th>
+    <th style="width: 100px; border: 1px solid black">Subject</th>
+    <th style="width: 100px; border: 1px solid black">Course Number</th>
+    <th style="width: 100px; border: 1px solid black">Course Name</th>
+    <th style="width: 100px; border: 1px solid black">Credits</th>
+    <th style="width: 100px; border: 1px solid black">Instructor</th>
+    <th style="width: 100px; border: 1px solid black">Days</th>
+    <th style="width: 100px; border: 1px solid black">Start Time</th>
+    <th style="width: 100px; border: 1px solid black">End Time</th>
+    <th style="width: 100px; border: 1px solid black">Location</th>
+  </tr>
+</table> 
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script src="js/student.js"></script>
+
+</body>
+</html>

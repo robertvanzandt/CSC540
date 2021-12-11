@@ -1,0 +1,27 @@
+// Test User 1
+// 
+// 84092757
+// John
+// Smith
+// smithj1@southernct.edu
+// Computer Science, M.S. - Cybersecurity
+// JohnPass
+// JohnPass
+
+// Course Taken: CSC 543 A
+// Course Taken: CSC 565 B
+
+// Test User 2
+//
+// 83750938
+// Bill
+// Wilson
+// wilsonb2@southernct.edu
+// Computer Science, B.S. - General
+// BillPass
+// BillPass
+
+// Course Taken: CSC 152 B
+// Course Taken: CSC 200 C
+
+
